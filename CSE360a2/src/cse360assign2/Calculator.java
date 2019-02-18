@@ -5,21 +5,25 @@ package cse360assign2;
  * Student name : Hsin-Jung Lee
  * Class ID: 451
  * Assignment 2
- * Description: This program will calculator numbers.
+ * Description: This program will calculator numbers and print history.
+ * https://github.com/hsinjlee/cse360assign2
  */
 
 /**
- * class Calculator contains integer total and calculator numbers.
+ * class Calculator contains an integer total, a StringBuffer callHistory
+ * ,and calculator numbers.
  */
 public class Calculator {
 
     private int total;
+    private StringBuffer calHistory = new StringBuffer();
 
     /**
      * class constructor
      */
     public Calculator() {
         total = 0;
+        calHistory.append("0");
     }
 
     /**
@@ -32,51 +36,58 @@ public class Calculator {
     }
 
     /**
-     * add method add integer value
+     * add method add integer value and append " + " sign and value
      *
      * @param value
      */
     public void add(int value) {
         total = total + value;
+        calHistory.append(" + " + value);
     }
 
     /**
-     * subtract method subtract integer value
+     * subtract method subtract integer value and append " - " sign and value
      *
      * @param value
      */
     public void subtract(int value) {
         total = total - value;
+        calHistory.append(" - " + value);
     }
 
     /**
-     * multiply method multiply integer value
+     * multiply method multiply integer value and append " * " sign and value
      *
      * @param value
      */
     public void multiply(int value) {
         total = total * value;
+        calHistory.append(" * " + value);
     }
 
     /**
-     * divide method divide integer value
+     * divide method divide integer value and append " / " sign and value.
+     * It only shows integer division
+     * if value equals 0, total will be 0;
      *
      * @param value
      */
     public void divide(int value) {
         if (value == 0) {
             total = 0;
+            calHistory.append(" / " + value);
         } else {
             total = (int) (total / value);
+            calHistory.append(" / " + value);
         }
     }
 
     /**
      * getHistory method get history data
      *
-     * @return String history
+     * @return String calHistory
      */
     public String getHistory() {
-        return "";
+        return calHistory.toString();
     }
 }
