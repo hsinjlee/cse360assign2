@@ -75,11 +75,10 @@ public class Calculator {
     public void divide(int value) {
         if (value == 0) {
             total = 0;
-            calHistory.append(" / " + value);
         } else {
-            total = (int) (total / value);
-            calHistory.append(" / " + value);
+            total = (total / value);
         }
+        calHistory.append(" / " + value);
     }
 
     /**
