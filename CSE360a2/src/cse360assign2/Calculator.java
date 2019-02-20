@@ -87,6 +87,6 @@ public class Calculator {
      * @return String calHistory
      */
     public String getHistory() {
-        return calHistory.toString();
+        return this.calHistory.toString();
     }
 }
